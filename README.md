@@ -25,8 +25,8 @@
 - 👥 다중 디바이스 sync (가족 공유 가능)
 
 **다운로드**
-- 📱 [Android APK v0.2.2 (86MB)](https://github.com/hykkh/h-programs/releases/download/v0.2.2/wine-cellar-v0.2.2.apk)
-- 📋 [Release 노트](https://github.com/hykkh/h-programs/releases/tag/v0.2.2)
+- 📱 [Android APK v0.2.3 (86MB)](https://github.com/hykkh/h-programs/releases/download/v0.2.3/wine-cellar-v0.2.3.apk)
+- 📋 [Release 노트](https://github.com/hykkh/h-programs/releases/tag/v0.2.3)
 - 🌐 PWA: 준비 중
 
 **설치 방법 (Android)**

@@ -24,8 +24,8 @@
 - ?뫁 ?ㅼ쨷 ?붾컮?댁뒪 sync (媛議?怨듭쑀 媛??
 
 **?ㅼ슫濡쒕뱶**
-- ?벑 [Android APK v0.4.9 (86MB)](https://github.com/hykkh/h-programs/releases/download/v0.2.133/wine-cellar-v0.4.9.apk)
-- ?뱥 [Release ?명듃](https://github.com/hykkh/h-programs/releases/tag/v0.2.133)
+- ?벑 [Android APK v0.4.9 (86MB)](https://github.com/hykkh/h-programs/releases/download/v0.4.9/wine-cellar-v0.4.9.apk)
+- ?뱥 [Release ?명듃](https://github.com/hykkh/h-programs/releases/tag/v0.4.9)
 - ?뙋 PWA: 以鍮?以?
 **?ㅼ튂 諛⑸쾿 (Android)**
 1. APK ?ㅼ슫濡쒕뱶

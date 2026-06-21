@@ -280,30 +280,19 @@
 <script>
 (async function loadVersions() {
   const cards = document.querySelectorAll('a.card[data-gh-repo]');
-  const cache = JSON.parse(localStorage.getItem('hpVerCache') || '{}');
-  const now = Date.now();
-  const TTL = 3600 * 1000; // 1 hour cache
   for (const card of cards) {
     const repo = card.dataset.ghRepo;
-    let ver = null;
-    if (cache[repo] && (now - cache[repo].t) < TTL) {
-      ver = cache[repo].v;
-    } else {
-      try {
-        const r = await fetch('https://api.github.com/repos/' + repo + '/releases/latest');
-        if (!r.ok) continue;
-        const j = await r.json();
-        ver = j.tag_name;
-        cache[repo] = { v: ver, t: now };
-      } catch (e) { continue; }
-    }
-    if (!ver) continue;
-    const slot = card.querySelector('.tag-version');
-    if (slot && slot.textContent !== ver) {
-      slot.textContent = ver;
-    }
+    try {
+      const r = await fetch('https://api.github.com/repos/' + repo + '/releases/latest');
+      if (!r.ok) continue;
+      const j = await r.json();
+      const ver = j.tag_name;
+      if (!ver) continue;
+      const slot = card.querySelector('.tag-version');
+      if (slot && slot.textContent !== ver) slot.textContent = ver;
+    } catch (e) { continue; }
   }
-  try { localStorage.setItem('hpVerCache', JSON.stringify(cache)); } catch (e) {}
+  try { localStorage.removeItem('hpVerCache'); } catch (e) {}
 })();
 </script>
 </body>

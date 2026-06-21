@@ -138,13 +138,13 @@
   <div class="section-title">📥 공개 다운로드</div>
   <div class="grid">
 
-    <a href="wine-cellar/" class="card">
+    <a href="wine-cellar/" class="card" data-gh-repo="hykkh/wine-cellar">
       <div class="top">
         <div class="icon">🍷</div>
         <div class="meta">
           <h2>Wine Cellar <span class="badge new">NEW</span></h2>
           <span class="tag">Android</span>
-          <span class="tag">v0.4.9</span>
+          <span class="tag tag-version">v0.4.9</span>
         </div>
       </div>
       <p>라벨 자동 인식, 매장 중복구매 방지, 시음 적기 알림, 자산 가치 추적, 갤러리 일괄 등록</p>
@@ -154,12 +154,12 @@
       </div>
     </a>
 
-    <a href="https://github.com/hykkh/h-programs/releases/latest/download/HTrain_Personal_Setup.exe" class="card">
+    <a href="https://github.com/hykkh/h-programs/releases/latest/download/HTrain_Personal_Setup.exe" class="card" data-gh-repo="hykkh/HTrain">
       <div class="top">
         <div class="icon">🚄</div>
         <div class="meta">
           <h2>HTrain Personal</h2>
-          <span class="tag">v0.1.0</span><span class="tag">Windows</span>
+          <span class="tag tag-version">v0.1.0</span><span class="tag">Windows</span>
           <span class="tag">KTX/SRT</span>
         </div>
       </div>
@@ -170,12 +170,12 @@
       </div>
     </a>
 
-    <a href="https://github.com/hykkh/h-programs/releases/latest/download/news-alert.apk" class="card">
+    <a href="https://github.com/hykkh/h-programs/releases/latest/download/news-alert.apk" class="card" data-gh-repo="hykkh/news-alert">
       <div class="top">
         <div class="icon">📰</div>
         <div class="meta">
           <h2>News Alert</h2>
-          <span class="tag">v1.1.0</span><span class="tag">Android</span>
+          <span class="tag tag-version">v1.1.0</span><span class="tag">Android</span>
           <span class="tag">키워드 알림</span>
         </div>
       </div>
@@ -202,12 +202,12 @@
       </div>
     </a>
 
-    <a href="https://github.com/hykkh/h-programs/releases/latest/download/video-downloader.apk" class="card">
+    <a href="https://github.com/hykkh/h-programs/releases/latest/download/video-downloader.apk" class="card" data-gh-repo="hykkh/video-downloader">
       <div class="top">
         <div class="icon">🎬</div>
         <div class="meta">
           <h2>Video Downloader</h2>
-          <span class="tag">v0.1.4</span><span class="tag">Android</span>
+          <span class="tag tag-version">v0.1.4</span><span class="tag">Android</span>
           <span class="tag">광고 X</span>
         </div>
       </div>
@@ -218,7 +218,7 @@
       </div>
     </a>
 
-    <a href="https://github.com/hykkh/h-programs/releases/latest/download/kidsnote-downloader.zip" class="card">
+    <a href="https://github.com/hykkh/h-programs/releases/latest/download/kidsnote-downloader.zip" class="card" data-gh-repo="hykkh/kidsnote-downloader">
       <div class="top">
         <div class="icon">📸</div>
         <div class="meta">
@@ -277,5 +277,34 @@
   공개 다운로드 = 누구나 사용 가능 · 개인 운영 = 형님 PC 전용
 </footer>
 
+<script>
+(async function loadVersions() {
+  const cards = document.querySelectorAll('a.card[data-gh-repo]');
+  const cache = JSON.parse(localStorage.getItem('hpVerCache') || '{}');
+  const now = Date.now();
+  const TTL = 3600 * 1000; // 1 hour cache
+  for (const card of cards) {
+    const repo = card.dataset.ghRepo;
+    let ver = null;
+    if (cache[repo] && (now - cache[repo].t) < TTL) {
+      ver = cache[repo].v;
+    } else {
+      try {
+        const r = await fetch('https://api.github.com/repos/' + repo + '/releases/latest');
+        if (!r.ok) continue;
+        const j = await r.json();
+        ver = j.tag_name;
+        cache[repo] = { v: ver, t: now };
+      } catch (e) { continue; }
+    }
+    if (!ver) continue;
+    const slot = card.querySelector('.tag-version');
+    if (slot && slot.textContent !== ver) {
+      slot.textContent = ver;
+    }
+  }
+  try { localStorage.setItem('hpVerCache', JSON.stringify(cache)); } catch (e) {}
+})();
+</script>
 </body>
 </html>

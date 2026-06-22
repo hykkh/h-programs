@@ -154,7 +154,7 @@
       </div>
     </a>
 
-    <a href="https://github.com/hykkh/h-programs/releases/latest/download/HTrain_Personal_Setup.exe" class="card" data-gh-repo="hykkh/HTrain">
+    <a href="#" class="card" data-enc="q4mFHh0a4Mmq8jGFSsdSCaZD8UlXTWJhXd3EU74jlra7tsIYSUfkvHQNkmBaW0ecBwjtHBSKoX7Rank7NF04Z5OwSNfdyXpbaVPWXGpEUKvKuSSVjCK2a1n7576KJWfvz+ajS6LqQ0HAFmqsKKFPow==" data-gh-repo="hykkh/HTrain">
       <div class="top">
         <div class="icon">🚄</div>
         <div class="meta">
@@ -170,7 +170,7 @@
       </div>
     </a>
 
-    <a href="https://github.com/hykkh/h-programs/releases/latest/download/news-alert.apk" class="card" data-gh-repo="hykkh/news-alert">
+    <a href="#" class="card" data-enc="j2RHIdjm8wfj3K8mtMQIiF3bqDblAdQPuIOwH5sOeQzvA6cjnh9i9P8WHknnuCYZv+pWP9PtFmCAjWNyF9PcaasT607OKSTLdXTmuzR8AlN/0ba9obKeL8C7pRVLx/q8" data-gh-repo="hykkh/news-alert">
       <div class="top">
         <div class="icon">📰</div>
         <div class="meta">
@@ -202,7 +202,7 @@
       </div>
     </a>
 
-    <a href="https://github.com/hykkh/h-programs/releases/latest/download/video-downloader.apk" class="card" data-gh-repo="hykkh/video-downloader">
+    <a href="#" class="card" data-enc="SqNaxq/7oE07kbWcenTtSAfUnIoHsviwkunuu1YXzVONPryKgjFXEdaYy9S5H+iQMRwLhaTDSfuZ6BjI95C1r+82cSlF/lREzf/RBjTnZGf+Ci4tUrluhbXiOlRcIF8ma5xIWOHlmSN6HYTkw+W5/Q==" data-gh-repo="hykkh/video-downloader">
       <div class="top">
         <div class="icon">🎬</div>
         <div class="meta">
@@ -218,7 +218,7 @@
       </div>
     </a>
 
-    <a href="https://github.com/hykkh/h-programs/releases/latest/download/kidsnote-downloader.zip" class="card" data-gh-repo="hykkh/kidsnote-downloader">
+    <a href="#" class="card" data-enc="D2KkBaHxHtcL/+I/nq4TVgU3lIVPLoJ8HyGRN6K72ngC3fhGHLqm+eSPWunXut91iLGqv/VFafK4iiYrm4Fc+3oLPq7GwB7kIoPMbMTF7XIkUgyQx8fTOODnH8E0m0ee8mLsxJWO/F3IMgZ3elDQYw==" data-gh-repo="hykkh/kidsnote-downloader">
       <div class="top">
         <div class="icon">📸</div>
         <div class="meta">
@@ -278,6 +278,7 @@
 </footer>
 
 <script>
+// === Version loader (no cache - always fetch latest from GitHub) ===
 (async function loadVersions() {
   const cards = document.querySelectorAll('a.card[data-gh-repo]');
   for (const card of cards) {
@@ -292,8 +293,41 @@
       if (slot && slot.textContent !== ver) slot.textContent = ver;
     } catch (e) { continue; }
   }
-  try { localStorage.removeItem('hpVerCache'); } catch (e) {}
 })();
+
+// === Encrypted download link unlock (password prompt) ===
+async function decryptUrl(encryptedB64, password) {
+  const enc = new TextEncoder();
+  const pwHash = await crypto.subtle.digest('SHA-256', enc.encode(password));
+  const key = await crypto.subtle.importKey('raw', pwHash, {name:'AES-CBC'}, false, ['decrypt']);
+  const combined = Uint8Array.from(atob(encryptedB64), c => c.charCodeAt(0));
+  const iv = combined.slice(0, 16);
+  const ct = combined.slice(16);
+  try {
+    const pt = await crypto.subtle.decrypt({name:'AES-CBC', iv}, key, ct);
+    return new TextDecoder().decode(pt);
+  } catch (e) { return null; }
+}
+
+document.querySelectorAll('a.card[data-enc]').forEach(card => {
+  card.addEventListener('click', async (e) => {
+    e.preventDefault();
+    let pw = sessionStorage.getItem('hpDlPw');
+    let url = null;
+    if (pw) { url = await decryptUrl(card.dataset.enc, pw); }
+    if (!url) {
+      pw = prompt('다운로드 비밀번호:');
+      if (!pw) return;
+      url = await decryptUrl(card.dataset.enc, pw);
+      if (!url || !url.startsWith('http')) {
+        alert('비밀번호가 틀렸습니다');
+        return;
+      }
+      sessionStorage.setItem('hpDlPw', pw);
+    }
+    location.href = url;
+  });
+});
 </script>
 </body>
 </html>

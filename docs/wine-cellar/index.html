@@ -153,9 +153,21 @@
 </div>
 
 <footer>
-  © 2026 hykkh — Wine Cellar v0.2.133<br>
+  © 2026 hykkh — Wine Cellar <span id="wc-version">로딩중…</span><br>
   Backend: Supabase · Vision: Gemini · Built with Expo<br>
   <a href="https://github.com/hykkh/h-programs">github.com/hykkh/h-programs</a>
 </footer>
+<script>
+(async () => {
+  try {
+    const r = await fetch('https://api.github.com/repos/hykkh/h-programs/releases/latest', { headers: { Accept: 'application/vnd.github+json' } });
+    if (r.ok) {
+      const j = await r.json();
+      const tag = (j.tag_name || '').replace(/^v/, '');
+      if (tag) document.getElementById('wc-version').textContent = 'v' + tag;
+    }
+  } catch (_) {}
+})();
+</script>
 </body>
 </html>

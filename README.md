@@ -6,6 +6,23 @@
 
 ---
 
+## 🛰️ 부동산 레이더
+
+> 아파트·원투룸 매물 + 토지/공매/입찰 통합 감시 → 저평가 분석 + 텔레그램 알림 + 딥링크
+
+**기능**
+- 🏛️ 온비드 공매 · 📋 나라장터 입찰 · 📊 국토부 실거래 · 🏠 네이버 매물(Chrome CDP) 통합 감시
+- 🔔 지역·아파트를 검색으로 선택(법정동코드 자동), 종류·거래유형 버튼 선택
+- 💡 매물 호가 vs 국토부 실거래 시세 → #급매, 공매 감정가 대비 저감률
+- 🔗 알림에서 원본 매물/온비드로 바로가기 + 🗺️ 카카오맵
+- 📱 Flask 웹 대시보드(:8100) + WebView 안드로이드 앱
+
+**다운로드**
+- 📱 [Android APK v1.0.0](https://github.com/hykkh/h-programs/releases/download/realty-radar-v1.0.0/realty-radar-v1.0.0.apk) — 개인 서버(PC) 연동형
+- 📦 [Release 노트](https://github.com/hykkh/h-programs/releases/tag/realty-radar-v1.0.0)
+
+---
+
 ## ?뜼 Wine Cellar
 
 > ???而щ젆??愿由?????留ㅼ옣 以묐났 援щℓ 諛⑹? + ?쇰꺼 ?먮룞 ?몄떇 + ?쒖꽭 異붿쟻

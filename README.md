@@ -6,22 +6,6 @@
 
 ---
 
-## 🔔 소리모드 위젯
-
-> 홈 화면 위젯 한 번 탭으로 벨소리 → 진동 → 무음 순환 전환
-
-**기능**
-- 🏠 1×1 홈 위젯 — 탭할 때마다 벨소리 → 진동 → 무음 → 벨소리 (현재 모드 아이콘 표시)
-- 🎚️ 앱에서 벨소리/진동/무음 직접 전환
-- 🔄 볼륨키·빠른설정으로 바꿔도 위젯 자동 동기화
-- 🔒 무음 전환은 방해금지(DND) 권한 1회 허용 (벨소리·진동은 권한 불필요)
-
-**다운로드**
-- 📱 [Android APK v1.0.0](https://github.com/hykkh/h-programs/releases/download/sound-widget-v1.0.0/sound-widget-v1.0.0.apk)
-- 📦 [Release 노트](https://github.com/hykkh/h-programs/releases/tag/sound-widget-v1.0.0)
-
----
-
 ## 🛰️ 부동산 레이더
 
 > 아파트·원투룸 매물 + 토지/공매/입찰 통합 감시 → 저평가 분석 + 텔레그램 알림 + 딥링크

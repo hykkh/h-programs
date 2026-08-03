@@ -12,9 +12,9 @@ hykkh(@hykkh) 개인 프로그램 다운로드 카탈로그.
 
 > 매진된 KTX 의 취소표를 대신 기다리는 앱. 구간·날짜를 걸어두면 이 폰이 코레일에 직접 붙어 빈자리를 찾고, 잡으면 바로 알려줍니다. 화면을 꺼두어도 계속 찾습니다. 철도 계정은 폰 안에만 암호화해 두고 서버로 보내지 않습니다. 역은 눌러서 고르고, 즐겨찾기로 한 번에 채웁니다. 승인된 계정과 등록된 기기에서만 동작.
 
-**v2.0.0 · Android · KTX 취소표**
+**v2.0.1 · Android · KTX 취소표**
 
-[내려받기](https://github.com/hykkh/h-programs/releases/download/v0.4.9/htrain-app-v2.0.0.apk)
+[내려받기](https://github.com/hykkh/h-programs/releases/download/v0.4.9/htrain-app.apk)
 
 ---
 

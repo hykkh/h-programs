@@ -27,10 +27,31 @@ def strip_tags(t):
 
 
 def cards(html):
+    """카드를 뽑는다.
+
+    카드는 대개 <a> 하나지만, 받을 곳이 둘 이상인 것(폰·PC)은 <div> 안에
+    버튼을 여러 개 둔다. <a> 만 찾으면 그런 카드가 README 에서 통째로
+    사라진다 — H-Train 이 실제로 그렇게 빠졌다 (2026-08-04).
+    """
     out = []
-    for m in re.finditer(r'<a ([^>]*)class="card[^"]*"([^>]*)>(.*?)</a>', html, re.S):
-        attrs, body = m.group(1) + m.group(2), m.group(3)
+    # 카드 경계는 '다음 카드가 시작하기 직전' 으로 자른다.
+    # 태그 깊이를 세는 방법도 써봤지만, 정규식의 백슬래시가 편집을 거치며
+    # 사라져 조용히 어긋났다. 경계만 보면 그런 일이 없다.
+    OPEN = re.compile('<(?:a|div)[ ][^>]*class="card[^"]*"[^>]*>')
+    starts = [m.start() for m in OPEN.finditer(html)]
+    starts.append(len(html))
+
+    blocks = []
+    for i, pos in enumerate(starts[:-1]):
+        chunk = html[pos:starts[i + 1]]
+        head = chunk[:chunk.index('>') + 1]
+        blocks.append((pos, head, chunk[len(head):]))
+
+    for _pos, attrs, body in blocks:
         href = re.search(r'href="([^"]*)"', attrs)
+        if not href or not href.group(1).startswith('http'):
+            # 카드 자체에 링크가 없으면 안쪽 버튼에서 찾는다
+            href = re.search(r'<a class="pick" href="(https?://[^"]+)"', body)
         h2 = re.search(r'<h2>(.*?)</h2>', body, re.S)
         p = re.search(r'<p>(.*?)</p>', body, re.S)
         ver = re.search(r'<span class="version">(.*?)</span>', body, re.S)
@@ -44,6 +65,10 @@ def cards(html):
             'desc': strip_tags(p.group(1) if p else ''),
             'meta': strip_tags(ver.group(1) if ver else ''),
             'href': (href.group(1) if href else '').strip(),
+            # 받을 곳이 여럿이면 전부 적는다
+            'picks': [(strip_tags(t), h) for h, t in
+                      re.findall(r'<a class="pick" href="([^"]*)"[^>]*>.*?'
+                                 r'<span class="pick-t">(.*?)</span>', body, re.S)],
         })
     return out
 
@@ -75,13 +100,25 @@ def build(items):
         if bits:
             lines.append('**' + ' / '.join(bits) + '**')
             lines.append('')
-        href = it['href']
-        if href.startswith('http'):
-            lines.append(f'[내려받기]({href})')
-        elif href and href not in ('#',):
-            lines.append(f'[자세히](./{href.lstrip("./")})')
+        picks = it.get('picks') or []
+        if len(picks) > 1:
+            # 받을 곳이 여럿인 것(폰·PC)은 전부 적는다. 하나만 적으면
+            # 나머지가 없는 줄 안다
+            parts = []
+            for label, url in picks:
+                if url.startswith('http'):
+                    parts.append(f'[{label}]({url})')
+                else:
+                    parts.append(f'{label} — 카탈로그 페이지에서 (비공개 배포)')
+            lines.append(' · '.join(parts))
         else:
-            lines.append('_다운로드 링크는 카탈로그 페이지에서 (비공개 배포)_')
+            href = it['href']
+            if href.startswith('http'):
+                lines.append(f'[내려받기]({href})')
+            elif href and href not in ('#',):
+                lines.append(f'[자세히](./{href.lstrip("./")})')
+            else:
+                lines.append('_다운로드 링크는 카탈로그 페이지에서 (비공개 배포)_')
         lines.append('')
         lines.append('---')
         lines.append('')

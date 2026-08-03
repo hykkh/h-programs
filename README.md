@@ -1,112 +1,121 @@
-# ?썱截?H-Programs
+# H-Programs
 
-?뺣떂(@hykkh)??留뚮뱺 媛쒖씤 ?꾨줈洹몃옩 紐⑥쓬 ???ㅼ슫濡쒕뱶 移댄깉濡쒓렇.
+hykkh(@hykkh) 개인 프로그램 다운로드 카탈로그.
 
-> ?좑툘 紐⑤뱺 ?깆? **媛쒖씤??*?낅땲?? ?뺣떂怨?吏곸젒 ?곕씫???용뒗 遺꾩뿉 ?쒗빐 ?ъ슜 沅뚯옣.
+> 모든 앱은 **개인용**입니다. 직접 연락이 닿는 분에 한해 사용 권장.
 
----
-
-## 🚆 H-Train (안드로이드)
-
-> 매진된 KTX/SRT 의 취소표를 대신 기다린다 → 자동 예약 + 자동 결제 + 텔레그램 알림
-
-**기능**
-- 🎯 구간·날짜·인원·시간대를 걸어두면 서버가 24시간 빈자리를 찾는다
-- 🚄 열차를 골라두면 그 열차만 노린다. 매진된 열차도 고를 수 있다
-- 👥 여럿이면 한 자리씩 나눠 잡는다 (코레일은 자동결제 필요, SRT 는 불필요)
-- 💳 카드가 등록돼 있으면 예약 즉시 결제까지
-- 📱 폰을 꺼둬도 계속 찾는다. 알림은 텔레그램으로
-- 🔐 승인된 계정 + 등록된 기기에서만 동작
-
-**다운로드**
-- 📱 [Android APK v2.0.0](https://github.com/hykkh/h-programs/releases/download/v0.4.9/htrain-app-v2.0.0.apk) — 개인 서버 연동형 (1.7MB)
+카탈로그 웹페이지: <https://hyt.kr/hp>
 
 ---
 
-## 🛰️ 부동산 레이더
+## H-Train
 
-> 아파트·원투룸 매물 + 토지/공매/입찰 통합 감시 → 저평가 분석 + 텔레그램 알림 + 딥링크
+> 매진된 KTX/SRT 의 취소표를 대신 기다리는 앱. 구간과 날짜를 걸어두면 서버가 24시간 빈자리를 찾아 예약하고, 카드가 등록돼 있으면 결제까지 한다. 폰을 꺼둬도 계속 찾는다. 열차를 골라두면 그 열차만 노리고, 여럿이면 한 자리씩 나눠 잡는다. 승인된 계정과 등록된 기기에서만 동작.
 
-**기능**
-- 🏛️ 온비드 공매 · 📋 나라장터 입찰 · 📊 국토부 실거래 · 🏠 네이버 매물(Chrome CDP) 통합 감시
-- 🔔 지역·아파트를 검색으로 선택(법정동코드 자동), 종류·거래유형 버튼 선택
-- 💡 매물 호가 vs 국토부 실거래 시세 → #급매, 공매 감정가 대비 저감률
-- 🔗 알림에서 원본 매물/온비드로 바로가기 + 🗺️ 카카오맵
-- 📱 Flask 웹 대시보드(:8100) + WebView 안드로이드 앱
+**v2.0.0 · Android · KTX/SRT / 1.7MB · Android 8+ · 서버 연동**
 
-**다운로드**
-- 📱 [Android APK v1.0.0](https://github.com/hykkh/h-programs/releases/download/realty-radar-v1.0.0/realty-radar-v1.0.0.apk) — 개인 서버(PC) 연동형
-- 📦 [Release 노트](https://github.com/hykkh/h-programs/releases/tag/realty-radar-v1.0.0)
+[내려받기](https://github.com/hykkh/h-programs/releases/download/v0.4.9/htrain-app-v2.0.0.apk)
 
 ---
 
-## ?뜼 Wine Cellar
+## 부동산 레이더
 
-> ???而щ젆??愿由?????留ㅼ옣 以묐났 援щℓ 諛⑹? + ?쇰꺼 ?먮룞 ?몄떇 + ?쒖꽭 異붿쟻
+> 아파트·원투룸 매물과 토지/공매/입찰을 관심조건으로 등록하면, 새 물건이 뜰 때 저평가 분석(시세대비·감정가 저감률)해서 텔레그램 알림 + 원본 딥링크로 바로 연결. 온비드·나라장터·국토부 실거래·네이버 매물 통합 감시. 지역·아파트는 검색으로 선택(법정동코드 자동). 개인 서버 연동형.
 
-**湲곕뒫**
-- ?벜 ?쇰꺼 ?ъ쭊 ???먮룞 ?몄떇 (Gemini Vision, ?쑣룹쁺 ?꾨찘紐?紐⑤몢 OK)
-- ?뵇 ?쒓뎅???곸뼱 ?대쫫 寃?됱쑝濡??먮룞 ?깅줉
-- ?룵 留ㅼ옣 紐⑤뱶: ?쇰꺼 李띿쑝硫?利됱떆 "蹂댁쑀 N蹂? ?쒖떆
-- ?뜼 ?쒖쓬 ?곴린 ?먮룞 ?곗젙 (吏??룸벑湲됰퀎 drinking window)
-- 狩?Great Vintage ?먮룞 ?쒖떆 (蹂대Ⅴ??/ 遺瑜닿퀬??
-- ?룿 ?꾨찘蹂?洹몃９??/ AOC ?먮룞 遺꾨쪟
-- ?뱤 ?듦퀎 (吏???됱긽/?깃툒蹂?遺꾪룷)
-- ?뮥 ?먯궛 媛移??⑷퀎
-- ?뵒 ?꾩떆由ъ뒪??- 狩??쒖쓬 ?명듃 (?먯닔/?섏뼱留??숉뻾??
-- ?뱾 CSV ?대낫?닿린
-- ?뫁 ?ㅼ쨷 ?붾컮?댁뒪 sync (媛議?怨듭쑀 媛??
+**v1.0.5 · Android · 매물·입찰 알림 / Android 8+ · 서버(PC) 연동**
 
-**?ㅼ슫濡쒕뱶**
-- ?벑 [Android APK v0.4.9 (86MB)](https://github.com/hykkh/h-programs/releases/download/v0.4.9/wine-cellar-v0.4.9.apk)
-- ?뱥 [Release ?명듃](https://github.com/hykkh/h-programs/releases/tag/v0.4.9)
-- ?뙋 PWA: 以鍮?以?
-**?ㅼ튂 諛⑸쾿 (Android)**
-1. APK ?ㅼ슫濡쒕뱶
-2. ?곗뿉??????"異쒖쿂 ?????녿뒗 ???덉슜" ?ㅼ젙 ?덈궡 ?곕씪 ?덉슜
-3. ?ㅼ튂
-4. ?됰꽕??鍮꾨쾲 留뚮뱾嫄곕굹 ?쒖뿰 怨꾩젙?쇰줈 濡쒓렇??
-**?쒖뿰 怨꾩젙**
-- ?됰꽕?? `demo`
-- 鍮꾨쾲: `DemoPassword2026!`
-- ???9蹂?誘몃━ ?깅줉?섏뼱 ?덉쓬 (Margaux/Latour/Mouton x2/Haut-Brion + 遺瑜닿퀬??4)
+[내려받기](https://github.com/hykkh/h-programs/releases/download/realty-radar-v1.0.5/realty-radar-v1.0.5.apk)
 
 ---
 
-## ?쉪 HTrain Personal
+## Wine Cellar
 
-> KTX/SRT ?먮룞 ?덈ℓ ?꾩슦誘?
-(?ㅼ슫濡쒕뱶 留곹겕??蹂?移댄깉濡쒓렇??異뷀썑 異붽?)
+> 라벨 자동 인식, 매장 중복구매 방지, 시음 적기 알림, 자산 가치 추적, 갤러리 일괄 등록
 
----
+**Android · v0.4.9 / 86MB · Android 7+**
 
-## ?룙截?Camp Schedule
-
-> 罹좏븨 ?쇱젙 愿由??붾젅洹몃옩 遊?
-(以鍮?以?
+[자세히](./wine-cellar/)
 
 ---
 
-## ?렗 Video Downloader
+## HTrain Personal
 
-> ?숈쁺???ㅼ슫濡쒕뱶 ?꾩슦誘?
-(以鍮?以?
+> KTX/SRT 자동 예매 도우미. 매진된 좌석 실시간 모니터링 + 자동 발권.
 
----
+**v0.1.0 · Windows · KTX/SRT / Windows 10/11 · Setup.exe**
 
-## ?썱截???留롮? ?꾨줈洹몃옩
-
-| ?꾨줈洹몃옩 | ?ㅻ챸 | ?곹깭 |
-|---|---|---|
-| Wine Cellar | ???而щ젆??愿由?| ??諛고룷 |
-| HTrain | 湲곗감 ?먮룞 ?덈ℓ | ?댁쁺 以?|
-| Camp Schedule | 罹좏븨 ?쇱젙 遊?| ?댁쁺 以?|
-| Telegram Bot (?대퉬?? | 媛쒖씤 鍮꾩꽌 遊?| ?댁쁺 以?|
-| News Alert | ?ㅼ썙???댁뒪 ?몄떆 | ?댁쁺 以?|
-| Video Downloader | ?숈쁺?????| ?댁쁺 以?|
-| ???ㅼ닔 | ??| ??|
+_다운로드 링크는 카탈로그 페이지에서 (비공개 배포)_
 
 ---
 
-?쨼 _??移댄깉濡쒓렇???먮룞 ?앹꽦?⑸땲??(`hykkh/h-programs`)._  
-?뚯뒪肄붾뱶??蹂꾨룄 Private repo ??蹂닿??섏뼱 ?덉뒿?덈떎.
+## News Alert
+
+> 관심 키워드 등록하면 새 뉴스 발생 즉시 푸시 알림. 종목 모니터링.
+
+**v1.1.0 · Android · 키워드 알림 / Android 7+ · APK**
+
+_다운로드 링크는 카탈로그 페이지에서 (비공개 배포)_
+
+---
+
+## 메시지 작성기
+
+> 상황별 메시지를 빠르게 작성. 설치 없이 브라우저로 바로 사용 · 홈화면 추가 시 앱처럼 동작.
+
+**PWA · iOS/Android/PC / 설치 불필요 · URL 한 줄**
+
+[내려받기](https://hykkh.github.io/message-composer/)
+
+---
+
+## Video Downloader
+
+> Instagram/YouTube/TikTok 등 영상을 광고 없이 폰에 저장. MP3 음원 추출도 가능. SnapTube 대안 (광고/트래킹 0).
+
+**v0.1.9 · Android · 광고 X / Android 8+ · APK · 57MB**
+
+[내려받기](https://github.com/hykkh/h-programs/releases/download/video-downloader-v0.1.9/video-downloader-v0.1.9.apk)
+
+---
+
+## 키즈노트 다운로더
+
+> 키즈노트 알림장·앨범 사진/동영상 전부 자동 백업. 브라우저 화면에서 옵션 선택(기간·사진/동영상 화질·받은 것 이후만). 로그인 한 번이면 끝. 원본·고화질.
+
+**v1.1.0 · Windows · 웹앱 / Windows 10/11 · ZIP (exe + 설명)**
+
+_다운로드 링크는 카탈로그 페이지에서 (비공개 배포)_
+
+---
+
+## 포토에디터
+
+> 사진: 자르기 · 블러 · 모자이크 · 워터마크 · 얼굴 자동 감지 모자이크. 동영상: 전체 블러 · 얼굴/머리 추적 모자이크(2-패스로 초반·뒤돌기까지 커버) · 워터마크. 저장 시 위치·촬영정보 등 메타데이터 자동 제거.
+
+**v1.5.6 · Android · 얼굴 자동 모자이크 / Android 8+ · APK (41MB)**
+
+[내려받기](https://github.com/hykkh/h-programs/releases/download/photo-editor-v1.5.6/PhotoEditor-v1.5.6.apk)
+
+---
+
+## 무음셔터
+
+> 삼성 순정 카메라의 강제 셔터음을 꺼줍니다. 온디바이스 무선 디버깅으로 적용(PC·루팅 불필요), 초보자용 페어링 안내 + 인앱 자동 업데이트. 안드로이드 11+ · 한국 내수 삼성 전용.
+
+**v1.0.9 · Android · 순정 카메라 무음 / Android 11+ · APK (47MB)**
+
+[내려받기](https://github.com/hykkh/h-programs/releases/download/silent-shutter-v1.0.9/silent-shutter-v1.0.9.apk)
+
+---
+
+## 이쁜카메라
+
+> 갤럭시 순정풍 무음 뷰티 카메라. 센서 최대 화질(12.5MP)로 촬영하고, 강도 하나로 조절하는 추천 뷰티(피부 보정 · 얼굴/머리 축소 · 화이트닝)와 원탭 색감 필터를 실시간·후보정 모두 적용. 셔터음 무음 내장.
+
+**v1.7.0 · Android · 무음 뷰티 카메라 / Android 8+ · APK (14MB)**
+
+[내려받기](https://github.com/hykkh/h-programs/releases/download/camera-app-v1.7.0/_v1.7.0.apk)
+
+---
+
+<sub>이 문서는 docs/index.html 에서 생성됩니다. 내용을 고칠 때는 index.html 을 고치세요.</sub>

@@ -91,9 +91,13 @@
   <h1>Wine Cellar</h1>
   <p class="tagline">매장에서 카메라 한 번이면<br>"이거 이미 있나?" 확인 끝</p>
 
-  <a href="https://github.com/hykkh/h-programs/releases/latest/download/wine-cellar.apk" class="download-btn">
+  <!-- releases/latest 는 쓰지 않는다. h-programs 릴리스에는 여러 프로그램이
+       섞여 있어서, 다른 프로그램이 새로 올라오면 latest 가 그쪽을 가리키고
+       이 버튼은 404 가 된다. 실제로 video-downloader 에 밀려 죽어 있었다
+       (형님 2026-08-07). 파일은 v0.4.9 태그에 이름 그대로 덮어쓴다. -->
+  <a href="https://github.com/hykkh/h-programs/releases/download/v0.4.9/wine-cellar.apk" class="download-btn">
     📥 Android APK 다운로드
-    <div class="size">최신 버전 자동 추적 · 약 86MB</div>
+    <div class="size">v0.4.12 · 34MB</div>
   </a>
 
   <a href="https://github.com/hykkh/h-programs/releases" class="secondary-btn">
@@ -153,21 +157,15 @@
 </div>
 
 <footer>
-  © 2026 hykkh — Wine Cellar <span id="wc-version">로딩중…</span><br>
+  © 2026 hykkh — Wine Cellar <span id="wc-version">v0.4.12</span><br>
   Backend: Supabase · Vision: Gemini · Built with Expo<br>
   <a href="https://github.com/hykkh/h-programs">github.com/hykkh/h-programs</a>
 </footer>
-<script>
-(async () => {
-  try {
-    const r = await fetch('https://api.github.com/repos/hykkh/h-programs/releases/latest', { headers: { Accept: 'application/vnd.github+json' } });
-    if (r.ok) {
-      const j = await r.json();
-      const tag = (j.tag_name || '').replace(/^v/, '');
-      if (tag) document.getElementById('wc-version').textContent = 'v' + tag;
-    }
-  } catch (_) {}
-})();
-</script>
+<!-- 판번호를 GitHub 에서 읽어오던 코드를 뺐다. h-programs 의 latest 를 물어서
+     다른 프로그램(video-downloader v0.1.9)의 판번호를 와인셀러 것인 양 띄우고
+     있었다. 그렇다고 wine-cellar 저장소를 물으면 비공개라 방문자에게는 404 다.
+     읽어올 데가 없으므로 그냥 적어둔다 — 올릴 때 위 두 곳을 같이 고친다
+     (형님 2026-08-07). -->
+
 </body>
 </html>

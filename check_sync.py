@@ -23,7 +23,23 @@ import subprocess
 import sys
 import urllib.request
 
-sys.stdout.reconfigure(encoding='utf-8')
+# 표준 부트스트랩. 한 줄짜리 reconfigure 만 두면 PowerShell 이 이 출력을
+# cp949 로 읽어 '??移댄깉濡쒓렇' 처럼 깨진다 — 오늘 daily_sync 로그에서
+# 실제로 그랬다 (형님 2026-08-20 '항상 utf-8 로 하기로 안 했니?').
+os.environ['PYTHONIOENCODING'] = 'utf-8'
+os.environ['PYTHONUTF8'] = '1'
+for _s in ('stdout', 'stderr'):
+    try:
+        getattr(sys, _s).reconfigure(encoding='utf-8', errors='replace')
+    except Exception:
+        pass
+if sys.platform == 'win32':
+    try:
+        import ctypes
+        ctypes.windll.kernel32.SetConsoleCP(65001)
+        ctypes.windll.kernel32.SetConsoleOutputCP(65001)
+    except Exception:
+        pass
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 PROGRAMS = os.path.dirname(HERE)          # C:\H-Programs

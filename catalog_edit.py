@@ -13,9 +13,9 @@ index.html 은 [평문 잠금화면(🔒) + 전체 콘텐츠 AES-CBC 암호화] 
 평문을 디스크에 절대 안 남긴다(과거 .bak 유출 사고) — 전부 메모리에서 처리.
 
 사용법:
-  python catalog_edit.py decrypt --pw 0219              # 복호화된 HTML 을 stdout 으로
-  python catalog_edit.py grep "부동산" --pw 0219        # 복호화 후 키워드 포함 줄만
-  python catalog_edit.py replace "옛문구" "새문구" --pw 0219   # 치환→재암호화→index.html 갱신(+자체검증)
+  python catalog_edit.py decrypt --pw 'hy0511!!'              # 복호화된 HTML 을 stdout 으로
+  python catalog_edit.py grep "부동산" --pw 'hy0511!!'        # 복호화 후 키워드 포함 줄만
+  python catalog_edit.py replace "옛문구" "새문구" --pw 'hy0511!!'   # 치환→재암호화→index.html 갱신(+자체검증)
 
 의존: pip install cryptography
 """

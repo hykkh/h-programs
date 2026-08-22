@@ -7,8 +7,8 @@ hyt.kr/hp 카탈로그(잠금 안쪽)에 카드 하나를 추가하는 도구.
 는 사용자가 직접 한다(변경 사항을 검토할 여지를 남기려고 자동화 X).
 
 사용법:
-  python add_card.py --url  https://tesla.hyt.kr/o/.../hesla-card.txt --pw 0219
-  python add_card.py --file some-card.html                           --pw 0219
+  python add_card.py --url  https://tesla.hyt.kr/o/.../hesla-card.txt --pw 'hy0511!!'
+  python add_card.py --file some-card.html                           --pw 'hy0511!!'
 
 의존: pip install cryptography requests
 """

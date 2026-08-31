@@ -188,6 +188,44 @@ def main():
         elif said.group(1) != real:
             bad.append(f'{label}: 카탈로그 v{said.group(1)} · 실제 v{real}')
 
+    # ── 4) 회원용 페이지(hyt.kr/get)도 같이 본다 ─────────────
+    #
+    # 카탈로그(/hp)는 형님 전용이고, 회원에게 알려주는 주소는 따로 있다.
+    # 두 곳을 따로 두면 반드시 한쪽만 갱신된다 — 그래서 여기서 같이 본다
+    # (형님 2026-08-31 "앞으로 업데이트 시에 get 도 같이 업데이트해").
+    get_page = os.path.join(HERE, 'docs', 'htrain.html')
+    if os.path.isfile(get_page):
+        g = io.open(get_page, encoding='utf-8').read()
+        vpath, vpat = VERSION_OF['H-Train']
+        real = re.search(vpat, io.open(vpath, encoding='utf-8').read())
+        if real:
+            checked += 1
+            if f'최신 v{real.group(1)}' not in g:
+                said = re.search(r'최신 v([0-9.]+)', g)
+                bad.append(f'회원 페이지 판 번호가 다릅니다 — 적힌 값 '
+                           f'v{said.group(1) if said else "?"}, 실제 v{real.group(1)}')
+        for url in sorted(set(re.findall(
+                r'https://github\.com/[^"]+/releases/download/[^"]+', g))):
+            checked += 1
+            name = url.rsplit('/', 1)[-1]
+            if reachable(url) != 200:
+                bad.append(f'회원 페이지 링크가 죽었습니다 — {name}')
+                continue
+            got = release_assets(tag_of(url)) or {}
+            size = got.get(name)
+            near = re.search(re.escape(url) + r'"[^<]*<small>[^<]*?([0-9]+)MB', g)
+            if size and near:
+                checked += 1
+                said, real_mb = int(near.group(1)), size / 1048576
+                # 회원이 받기 전에 보는 유일한 숫자다. 1MB 넘게 어긋나면
+                # 다른 파일처럼 읽힌다.
+                if abs(said - real_mb) > 1:
+                    bad.append(f'회원 페이지 크기가 다릅니다 — {name}: '
+                               f'적힌 값 {said}MB, 실제 {real_mb:.1f}MB')
+        # 회원에게 카탈로그 비번이 새면 카탈로그가 형님 것이 아니게 된다.
+        checked += 1
+        if a.pw in g:
+            bad.append('회원 페이지에 카탈로그 비밀번호가 들어 있습니다')
     if bad:
         print(f'■ 카탈로그가 실제와 다릅니다 — {len(bad)}건')
         for b in bad:

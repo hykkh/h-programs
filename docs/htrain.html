@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>H-Train 받기</title>
+<style>
+  :root{
+    --deep:#1B1410; --card:#221913; --tag:#33251B;
+    --cream:#F7F0E4; --sub:#BCAB93; --line:#4E3B2C;
+    --gold:#B08D57; --orange:#F0700F; --good:#4CC694; --bad:#F0766A;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--deep); color:var(--cream);
+    font-family:"Malgun Gothic","Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+    line-height:1.75; font-size:16px;
+    -webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:640px; margin:0 auto; padding:44px 20px 70px}
+
+  header{text-align:center; margin-bottom:40px}
+  .mark{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:34px; letter-spacing:.22em; margin:0 0 6px; font-weight:400;
+  }
+  .tagline{color:var(--gold); font-size:12px; letter-spacing:.2em; margin:0}
+  .ver{
+    display:inline-block; margin-top:16px; padding:4px 13px;
+    border:1px solid var(--line); border-radius:2px;
+    color:var(--sub); font-size:12.5px; letter-spacing:.04em;
+  }
+
+  .btns{display:flex; flex-direction:column; gap:12px; margin-bottom:14px}
+  a.btn{
+    display:block; text-decoration:none; text-align:center;
+    padding:19px 16px; border-radius:3px; font-weight:700; font-size:17px;
+    background:var(--orange); color:#fff;
+  }
+  a.btn.alt{background:var(--card); color:var(--cream); border:1px solid var(--line)}
+  a.btn small{display:block; font-weight:400; font-size:12.5px; opacity:.85; margin-top:3px}
+  .under{text-align:center; color:var(--sub); font-size:12.5px; margin:0 0 46px}
+
+  h2{
+    font-size:19px; margin:46px 0 6px; padding-bottom:11px;
+    border-bottom:1px solid var(--line); font-weight:700;
+  }
+  .lead{color:var(--sub); font-size:14px; margin:0 0 22px}
+
+  ol.steps{list-style:none; margin:0; padding:0; counter-reset:s}
+  ol.steps>li{
+    counter-increment:s; position:relative;
+    padding:0 0 24px 46px; margin:0;
+  }
+  ol.steps>li::before{
+    content:counter(s); position:absolute; left:0; top:1px;
+    width:29px; height:29px; border-radius:50%;
+    background:var(--tag); border:1px solid var(--line); color:var(--gold);
+    font-size:13px; font-weight:700; display:flex;
+    align-items:center; justify-content:center;
+  }
+  ol.steps>li::after{
+    content:""; position:absolute; left:14px; top:33px; bottom:2px;
+    width:1px; background:var(--line);
+  }
+  ol.steps>li:last-child::after{display:none}
+  .what{font-weight:700; display:block; margin-bottom:2px}
+  .how{color:var(--sub); font-size:14.5px}
+  .screen{
+    display:inline-block; background:var(--tag); border:1px solid var(--line);
+    border-radius:2px; padding:1px 7px; margin:0 1px;
+    font-size:13.5px; color:var(--cream); white-space:nowrap;
+  }
+  .press{color:var(--orange); font-weight:700}
+
+  .note{
+    background:var(--card); border-left:3px solid var(--gold);
+    padding:15px 17px; margin:16px 0 0; border-radius:0 3px 3px 0;
+    font-size:14px; color:var(--sub);
+  }
+  .note b{color:var(--cream)}
+  .note.warn{border-left-color:var(--bad)}
+  .note.ok{border-left-color:var(--good)}
+
+  footer{
+    margin-top:56px; padding-top:22px; border-top:1px solid var(--line);
+    text-align:center; color:var(--sub); font-size:13px;
+  }
+  @media (max-width:420px){
+    .wrap{padding:34px 16px 56px}
+    .mark{font-size:28px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1 class="mark">H&middot;TRAIN</h1>
+    <p class="tagline">SI&Egrave;GE EN ATTENTE</p>
+    <span class="ver">최신 v2.6.7</span>
+  </header>
+
+  <div class="btns">
+    <a class="btn" href="https://github.com/hykkh/h-programs/releases/download/v0.4.9/htrain-app.apk">
+      폰에 설치 <small>안드로이드 &middot; 약 2MB</small>
+    </a>
+    <a class="btn alt" href="https://github.com/hykkh/h-programs/releases/download/v0.4.9/HTrain_Personal_Setup.exe">
+      PC에 설치 <small>윈도우 &middot; 약 26MB</small>
+    </a>
+  </div>
+  <p class="under">둘 다 쓰셔도 됩니다. 폰과 PC 중 <b>켜져 있는 쪽</b>이 표를 찾습니다.</p>
+
+  <h2>폰에 까는 법</h2>
+  <p class="lead">
+    처음 한 번만 조금 번거롭습니다. <b>다음부터는 앱이 알아서 새 버전을 받습니다.</b>
+    중간에 경고처럼 보이는 창이 몇 개 뜨는데, 어떤 창이 어떤 순서로 뜨는지
+    아래에 그대로 적어두었습니다. 그대로만 누르시면 됩니다.
+  </p>
+
+  <ol class="steps">
+    <li>
+      <span class="what">위의 <span class="press">폰에 설치</span> 를 누릅니다</span>
+      <span class="how">폰에서 이 페이지를 열고 누르셔야 합니다. PC에서 누르면 PC로 받아집니다.</span>
+    </li>
+    <li>
+      <span class="what">&ldquo;이런 종류의 파일은 기기에 위험할 수 있습니다&rdquo;</span>
+      <span class="how"><span class="screen">다운로드</span> 를 누르세요. 인터넷에서 받는 앱이라 브라우저가 늘 하는 말입니다.</span>
+    </li>
+    <li>
+      <span class="what">받은 파일을 엽니다</span>
+      <span class="how">화면 위에서 아래로 쓸어내리면 <span class="screen">htrain-app.apk</span> 가 보입니다. 그것을 누르세요.</span>
+    </li>
+    <li>
+      <span class="what">&ldquo;이 출처의 앱 설치&rdquo; 를 허용합니다</span>
+      <span class="how">
+        설정 화면으로 넘어갑니다. <span class="screen">이 출처 허용</span> 스위치를 켜고,
+        뒤로 가기를 누르면 아까 자리로 돌아옵니다. <b>한 번만 하면 됩니다.</b>
+      </span>
+    </li>
+    <li>
+      <span class="what">&ldquo;Google Play 프로텍트&rdquo; 가 검사하겠다고 합니다</span>
+      <span class="how">
+        <span class="screen">앱 검사</span> 를 누르세요. 잠시 뒤
+        &ldquo;안전한 앱으로 판단됨&rdquo; 이 나오면 <span class="screen">설치</span> 를 누릅니다.
+      </span>
+    </li>
+    <li>
+      <span class="what">앱을 열고 로그인합니다</span>
+      <span class="how">받으신 아이디와 비밀번호를 넣으세요.</span>
+    </li>
+    <li>
+      <span class="what">&ldquo;시작하기 전에&rdquo; 세 가지를 켭니다</span>
+      <span class="how">
+        알림 허용 &middot; 절전 예외 &middot; 업데이트 설치 허용 &mdash; 각 항목의
+        <span class="screen">허용하기</span> 를 눌러 셋 다 체크가 되게 해주세요.
+        이걸 안 하면 화면을 끄고 몇 시간 뒤 앱이 조용히 멈춥니다.
+      </span>
+    </li>
+  </ol>
+
+  <div class="note warn">
+    <b>삼성 폰에서 &ldquo;Auto Blocker&rdquo; 가 막는다면</b><br>
+    설정 &rarr; 보안 및 개인정보 보호 &rarr; Auto Blocker 에서 꺼주세요.
+    최신 갤럭시는 이것이 켜져 있으면 위 4번 화면이 아예 나타나지 않습니다.
+  </div>
+
+  <div class="note">
+    <b>왜 이런 창이 뜨나요?</b><br>
+    플레이스토어에 올리지 않고 직접 나눠 쓰는 앱이라 그렇습니다.
+    만든 사람이 확실하고(같은 서명), 구글 검사도 통과합니다.
+    <b>번거로운 건 처음 한 번뿐입니다.</b>
+  </div>
+
+  <h2>PC에 까는 법</h2>
+  <p class="lead">폰보다 간단합니다. 관리자 권한도 필요 없습니다.</p>
+
+  <ol class="steps">
+    <li>
+      <span class="what">위의 <span class="press">PC에 설치</span> 를 누릅니다</span>
+      <span class="how">브라우저가 &ldquo;일반적으로 다운로드되지 않는 파일&rdquo; 이라고 하면 <span class="screen">유지</span> 를 누르세요.</span>
+    </li>
+    <li>
+      <span class="what">받은 파일을 두 번 누릅니다</span>
+      <span class="how"><span class="screen">HTrain_Personal_Setup.exe</span></span>
+    </li>
+    <li>
+      <span class="what">&ldquo;Windows의 PC 보호&rdquo; 가 뜨면</span>
+      <span class="how">
+        <span class="screen">추가 정보</span> 를 누른 다음 <span class="screen">실행</span> 을 누르세요.
+        많이 퍼지지 않은 프로그램이라 윈도우가 하는 말입니다.
+      </span>
+    </li>
+    <li>
+      <span class="what">설치가 끝나면 저절로 켜집니다</span>
+      <span class="how">바탕화면에도 아이콘이 생깁니다. 로그인하시면 됩니다.</span>
+    </li>
+  </ol>
+
+  <div class="note ok">
+    <b>PC는 켜두기만 하면 됩니다</b><br>
+    컴퓨터를 켤 때 자동으로 같이 켜지고, 창을 닫아도 뒤에서 계속 표를 찾습니다.
+    자리를 잡으면 알림이 옵니다.
+  </div>
+
+  <h2>다음부터는 알아서 됩니다</h2>
+  <p class="lead">
+    새 버전이 나오면 <b>켤 때 앱이 스스로 받아서 깝니다.</b>
+    이 페이지에 다시 오실 일은 없습니다.
+  </p>
+  <div class="note">
+    폰에서만, 새 버전을 깔 때마다 <b>Google Play 프로텍트</b> 창이 한 번 더 뜹니다.
+    <span class="screen">앱 검사</span> &rarr; <span class="screen">설치</span> 두 번만 눌러주세요.
+    구글이 처음 보는 파일을 늘 검사하기 때문이라, 없앨 수가 없습니다.
+  </div>
+
+  <h2>잘 안 될 때</h2>
+  <div class="note">
+    <b>&ldquo;업데이트가 필요합니다&rdquo; 에서 안 넘어갈 때</b><br>
+    그 화면의 <span class="screen">설치 허용 켜기</span> 를 누르고 스위치를 켜주세요.
+    그래도 안 되면 <span class="screen">브라우저로 받기</span> 를 누르면 이 페이지로 옵니다.
+  </div>
+  <div class="note">
+    <b>&ldquo;앱이 설치되지 않았습니다&rdquo; 가 뜰 때</b><br>
+    예전 앱을 지우고 다시 깔아주세요. 로그인만 다시 하시면 됩니다.
+  </div>
+  <div class="note">
+    <b>그래도 안 되면</b><br>
+    어떤 화면에서 막혔는지 <b>사진을 찍어</b> 알려주세요. 그게 제일 빠릅니다.
+  </div>
+
+  <footer>
+    H-Train &middot; 취소표 자동 예매<br>
+    이 주소는 회원 전용입니다.
+  </footer>
+
+</div>
+</body>
+</html>

@@ -7,8 +7,8 @@ hyt.kr/hp 카탈로그(잠금 안쪽)에 카드 하나를 추가하는 도구.
 는 사용자가 직접 한다(변경 사항을 검토할 여지를 남기려고 자동화 X).
 
 사용법:
-  python add_card.py --url  https://tesla.hyt.kr/o/.../hesla-card.txt --pw 'hy0511!!'
-  python add_card.py --file some-card.html                           --pw 'hy0511!!'
+  python add_card.py --url  https://tesla.hyt.kr/o/.../hesla-card.txt
+  python add_card.py --file some-card.html                          
 
 의존: pip install cryptography requests
 """
@@ -17,7 +17,7 @@ import os
 import re
 import sys
 
-from catalog_edit import INDEX, decrypt, encrypt, _read_enc
+from catalog_edit import INDEX, decrypt, encrypt, _read_enc, default_pw
 
 
 # 마지막 공개 카드로 삼을 앵커. 그 카드 </a> 다음 개행에 새 카드를 삽입한다.
@@ -59,7 +59,7 @@ def main():
     src = ap.add_mutually_exclusive_group(required=True)
     src.add_argument("--url", help="카드 HTML 을 받을 URL")
     src.add_argument("--file", help="카드 HTML 파일 경로")
-    ap.add_argument("--pw", default=os.environ.get("HP_CATALOG_PW"))
+    ap.add_argument("--pw", default=default_pw())
     ap.add_argument("--dry-run", action="store_true", help="index.html 안 바꾸고 삽입 결과만 보기")
     a = ap.parse_args()
     if not a.pw:

@@ -46,7 +46,7 @@ gh auth login
 ### 1-5. 잠금 비밀번호 저장 (선택, 편의)
 
 ```powershell
-[Environment]::SetEnvironmentVariable('HP_CATALOG_PW', 'hy0511!!', 'User')
+[Environment]::SetEnvironmentVariable('HP_CATALOG_PW', '<카탈로그 비밀번호>', 'User')
 ```
 이후 새 PowerShell 창부터 `--pw` 인자 생략 가능. 개인 노트북에만 저장(공용 X).
 
@@ -65,28 +65,28 @@ git pull
 
 - **카드 하나 추가** (URL 또는 파일에서):
   ```powershell
-  python add_card.py --url "https://tesla.hyt.kr/o/397a2c29c488f053de2d/hesla-card.txt" --pw hy0511!!
+  python add_card.py --url "<Hesla 비밀 주소>/hesla-card.txt" --pw <카탈로그 비밀번호>
   ```
   또는
   ```powershell
-  python add_card.py --file some-card.html --pw hy0511!!
+  python add_card.py --file some-card.html --pw <카탈로그 비밀번호>
   ```
 
 - **문구 치환**:
   ```powershell
-  python catalog_edit.py replace "옛문구" "새문구" --pw hy0511!!
+  python catalog_edit.py replace "옛문구" "새문구" --pw <카탈로그 비밀번호>
   ```
 
 - **현재 내용 확인** (복호화):
   ```powershell
-  python catalog_edit.py decrypt --pw hy0511!! | Out-File check.html -Encoding utf8
+  python catalog_edit.py decrypt --pw <카탈로그 비밀번호> | Out-File check.html -Encoding utf8
   # check.html 열어서 확인 후 반드시 삭제 (평문 흔적 남기지 말 것)
   Remove-Item check.html
   ```
 
 - **특정 키워드 검색**:
   ```powershell
-  python catalog_edit.py grep "Hesla" --pw hy0511!!
+  python catalog_edit.py grep "Hesla" --pw <카탈로그 비밀번호>
   ```
 
 ### 2-3. 커밋 · 푸시
@@ -106,7 +106,7 @@ git push
 Invoke-WebRequest https://hykkh.github.io/h-programs/ -UseBasicParsing | Select-Object -ExpandProperty Content | Select-String "const ENC"
 ```
 
-브라우저에서 https://hyt.kr/hp 열고 `hy0511!!` 입력 → 추가한 카드 확인.
+브라우저에서 https://hyt.kr/hp 열고 `<카탈로그 비밀번호>` 입력 → 추가한 카드 확인.
 
 ---
 
@@ -137,10 +137,10 @@ Invoke-WebRequest https://hykkh.github.io/h-programs/ -UseBasicParsing | Select-
 ```powershell
 cd C:\catalog\h-programs
 git pull
-python add_card.py --url "https://tesla.hyt.kr/o/397a2c29c488f053de2d/hesla-card.txt" --pw hy0511!!
+python add_card.py --url "<Hesla 비밀 주소>/hesla-card.txt" --pw <카탈로그 비밀번호>
 git add docs/index.html
 git commit -m "Hesla 카드 추가 (테슬라 화면 미러링 + 단속 카메라)"
 git push
 ```
 
-푸시 후 https://hyt.kr/hp 접속 → `hy0511!!` → Hesla 카드 확인 → 다운로드 버튼 클릭 → `hesla.apk` 59MB 받아지면 성공.
+푸시 후 https://hyt.kr/hp 접속 → `<카탈로그 비밀번호>` → Hesla 카드 확인 → 다운로드 버튼 클릭 → `hesla.apk` 59MB 받아지면 성공.

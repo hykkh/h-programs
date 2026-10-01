@@ -11,8 +11,8 @@ grep 하면 잠금화면 평문만 보인다). 그래서 "최신화했습니다"
   2) 적어둔 파일 크기가 실제와 맞는가
   3) 프로그램마다 적어둔 판 번호가 그 프로그램의 실제 판과 같은가
 
-실행: python check_sync.py --pw 'hy0511!!'
-      python check_sync.py --pw 'hy0511!!' --quiet      # 문제 있을 때만 말한다
+실행: python check_sync.py            (비밀번호는 H-Secrets 에서 읽는다)
+      python check_sync.py --quiet      # 문제 있을 때만 말한다
 """
 import argparse
 import io
@@ -111,7 +111,8 @@ def reachable(url):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--pw', required=True)
+    from catalog_edit import default_pw
+    ap.add_argument('--pw', default=default_pw())
     ap.add_argument('--quiet', action='store_true',
                     help='문제가 있을 때만 말한다')
     a = ap.parse_args()

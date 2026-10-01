@@ -9,13 +9,13 @@ index.html 은 [평문 잠금화면(🔒) + 전체 콘텐츠 AES-CBC 암호화] 
 ⚠️ index.html 을 그냥 grep/curl 하면 '잠금화면' 평문만 보여 콘텐츠가 구버전인 줄
    착각하기 쉽다. 실제 카드 내용은 ENC 안에 있으니 반드시 이 도구로 복호화해 확인할 것.
 
-비밀번호는 코드에 넣지 않는다(repo 공개 안전). --pw 인자 또는 환경변수 HP_CATALOG_PW 로 전달.
+비밀번호는 코드에 넣지 않는다(repo 공개). --pw, 환경변수 HP_CATALOG_PW, 없으면 C:\H-Secrets\h-programs-catalog\catalog_pw.txt.
 평문을 디스크에 절대 안 남긴다(과거 .bak 유출 사고) — 전부 메모리에서 처리.
 
 사용법:
-  python catalog_edit.py decrypt --pw 'hy0511!!'              # 복호화된 HTML 을 stdout 으로
-  python catalog_edit.py grep "부동산" --pw 'hy0511!!'        # 복호화 후 키워드 포함 줄만
-  python catalog_edit.py replace "옛문구" "새문구" --pw 'hy0511!!'   # 치환→재암호화→index.html 갱신(+자체검증)
+  python catalog_edit.py decrypt # 복호화된 HTML 을 stdout 으로
+  python catalog_edit.py grep "부동산"         # 복호화 후 키워드 포함 줄만
+  python catalog_edit.py replace "옛문구" "새문구"    # 치환→재암호화→index.html 갱신(+자체검증)
 
 의존: pip install cryptography
 """
@@ -30,6 +30,14 @@ from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.primitives import padding
 
 INDEX = os.path.join(os.path.dirname(os.path.abspath(__file__)), "docs", "index.html")
+
+
+def default_pw():
+    """--pw 가 없을 때: 환경변수, 그다음 H-Secrets 의 파일."""
+    if os.environ.get("HP_CATALOG_PW"):
+        return os.environ["HP_CATALOG_PW"]
+    f = os.path.join(os.environ.get("H_SECRETS") or r"C:\H-Secrets", "h-programs-catalog", "catalog_pw.txt")
+    return open(f, encoding="utf-8").read().strip() if os.path.exists(f) else None
 
 
 def _key(pw):
@@ -69,7 +77,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("cmd", choices=["decrypt", "grep", "replace"])
     ap.add_argument("args", nargs="*")
-    ap.add_argument("--pw", default=os.environ.get("HP_CATALOG_PW"))
+    ap.add_argument("--pw", default=default_pw())
     a = ap.parse_args()
     if not a.pw:
         sys.exit("!! 비밀번호 필요: --pw <pw> 또는 환경변수 HP_CATALOG_PW")

@@ -22,7 +22,7 @@ hykkh(@hykkh) 개인 프로그램 다운로드 카탈로그.
 
 > 아파트·원투룸 매물과 토지 법원경매를 지역으로 관심조건 등록하면, 새 물건이 뜰 때 저평가 분석(시세대비·감정가 대비 저감률·유찰 예측)해서 폰 로컬 알림(텔레그램 없이) + 원본으로 바로 연결. 대법원 법원경매·국토부 실거래·네이버 매물 통합 감시. 지역·아파트는 검색으로 선택(법정동코드 자동). 폰마다 관심조건이 완전히 따로 관리되는 개인 서버 연동형.
 
-**v1.1.0 · Android · 매물·입찰 알림 / Android 8+ · 서버(PC) 연동**
+**v1.1.3 · Android · 매물·입찰 알림 / Android 8+ · 서버(PC) 연동**
 
 [내려받기](https://github.com/hykkh/h-programs/releases/download/v0.4.9/realty-radar.apk)
 
@@ -42,7 +42,7 @@ _다운로드 링크는 카탈로그 페이지에서 (비공개 배포)_
 
 > 관심 키워드 등록하면 새 뉴스 발생 즉시 푸시 알림. 종목 모니터링.
 
-**v1.1.0 · Android · 키워드 알림 / Android 7+ · APK**
+**v2.3.5 · Android · 키워드 알림 / Android 7+ · APK**
 
 _다운로드 링크는 카탈로그 페이지에서 (비공개 배포)_
 
@@ -62,9 +62,9 @@ _다운로드 링크는 카탈로그 페이지에서 (비공개 배포)_
 
 > Instagram/YouTube/TikTok 등 영상을 광고 없이 폰에 저장. MP3 음원 추출도 가능. SnapTube 대안 (광고/트래킹 0).
 
-**v0.1.9 · Android · 광고 X / Android 8+ · APK · 57MB**
+**v0.1.12 · Android · 광고 X / Android 8+ · APK · 64MB**
 
-[내려받기](https://github.com/hykkh/h-programs/releases/download/video-downloader-v0.1.9/video-downloader-v0.1.9.apk)
+[내려받기](https://github.com/hykkh/h-programs/releases/download/video-downloader-v0.1.12/video-downloader-v0.1.12.apk)
 
 ---
 

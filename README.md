@@ -82,9 +82,9 @@ _다운로드 링크는 카탈로그 페이지에서 (비공개 배포)_
 
 > 사진: 자르기 · 블러 · 모자이크 · 워터마크 · 얼굴 자동 감지 모자이크. 동영상: 구간·화면 자르기 · 회전 · 가리기 · 전체 블러 · 얼굴/머리 추적 모자이크(2-패스로 초반·뒤돌기까지 커버) · 워터마크. 저장 시 위치·촬영정보 등 메타데이터 자동 제거.
 
-**v1.6.0 · Android · 얼굴 자동 모자이크 / Android 8+ · APK (41MB)**
+**v1.6.1 · Android · 얼굴 자동 모자이크 / Android 8+ · APK (41MB)**
 
-[내려받기](https://github.com/hykkh/h-programs/releases/download/photo-editor-v1.6.0/PhotoEditor-v1.6.0.apk)
+[내려받기](https://github.com/hykkh/h-programs/releases/download/photo-editor-v1.6.1/PhotoEditor-v1.6.1.apk)
 
 ---
 

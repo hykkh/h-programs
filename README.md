@@ -22,7 +22,7 @@ hykkh(@hykkh) 개인 프로그램 다운로드 카탈로그.
 
 > 아파트·원투룸 매물과 토지 법원경매를 지역으로 관심조건 등록하면, 새 물건이 뜰 때 저평가 분석(시세대비·감정가 대비 저감률·유찰 예측)해서 폰 로컬 알림(텔레그램 없이) + 원본으로 바로 연결. 대법원 법원경매·국토부 실거래·네이버 매물 통합 감시. 지역·아파트는 검색으로 선택(법정동코드 자동). 폰마다 관심조건이 완전히 따로 관리되는 개인 서버 연동형.
 
-**v1.1.3 · Android · 매물·입찰 알림 / Android 8+ · 서버(PC) 연동**
+**v1.1.4 · Android · 매물·입찰 알림 / Android 8+ · 서버(PC) 연동**
 
 [내려받기](https://github.com/hykkh/h-programs/releases/download/v0.4.9/realty-radar.apk)
 
@@ -32,7 +32,7 @@ hykkh(@hykkh) 개인 프로그램 다운로드 카탈로그.
 
 > 라벨 자동 인식, 매장 중복구매 방지, 시음 적기 알림, 자산 가치 추적, 갤러리 일괄 등록
 
-**Android · v0.4.14 / 34MB · Android 7+**
+**Android · v0.4.15 / 34MB · Android 7+**
 
 _다운로드 링크는 카탈로그 페이지에서 (비공개 배포)_
 
@@ -42,7 +42,7 @@ _다운로드 링크는 카탈로그 페이지에서 (비공개 배포)_
 
 > 관심 키워드 등록하면 새 뉴스 발생 즉시 푸시 알림. 종목 모니터링.
 
-**v2.3.5 · Android · 키워드 알림 / Android 7+ · APK**
+**v2.3.6 · Android · 키워드 알림 / Android 7+ · APK**
 
 _다운로드 링크는 카탈로그 페이지에서 (비공개 배포)_
 
@@ -62,9 +62,9 @@ _다운로드 링크는 카탈로그 페이지에서 (비공개 배포)_
 
 > Instagram/YouTube/TikTok 등 영상을 광고 없이 폰에 저장. MP3 음원 추출도 가능. SnapTube 대안 (광고/트래킹 0).
 
-**v0.1.12 · Android · 광고 X / Android 8+ · APK · 64MB**
+**v0.1.13 · Android · 광고 X / Android 8+ · APK · 66MB**
 
-[내려받기](https://github.com/hykkh/h-programs/releases/download/video-downloader-v0.1.12/video-downloader-v0.1.12.apk)
+[내려받기](https://github.com/hykkh/h-programs/releases/download/video-downloader-v0.1.13/video-downloader-v0.1.13.apk)
 
 ---
 
@@ -72,7 +72,7 @@ _다운로드 링크는 카탈로그 페이지에서 (비공개 배포)_
 
 > 키즈노트 알림장·앨범 사진/동영상 전부 자동 백업. 브라우저 화면에서 옵션 선택(기간·사진/동영상 화질·받은 것 이후만). 로그인 한 번이면 끝. 원본·고화질.
 
-**v1.1.0 · Windows · 웹앱 / Windows 10/11 · ZIP (exe + 설명)**
+**v1.1.1 · Windows · 웹앱 / Windows 10/11 · ZIP (exe + 설명)**
 
 _다운로드 링크는 카탈로그 페이지에서 (비공개 배포)_
 
@@ -82,9 +82,9 @@ _다운로드 링크는 카탈로그 페이지에서 (비공개 배포)_
 
 > 사진: 자르기 · 블러 · 모자이크 · 워터마크 · 얼굴 자동 감지 모자이크. 동영상: 구간·화면 자르기 · 회전 · 가리기 · 전체 블러 · 얼굴/머리 추적 모자이크(2-패스로 초반·뒤돌기까지 커버) · 워터마크. 저장 시 위치·촬영정보 등 메타데이터 자동 제거.
 
-**v1.6.2 · Android · 얼굴 자동 모자이크 / Android 8+ · APK (41MB)**
+**v1.6.3 · Android · 얼굴 자동 모자이크 / Android 8+ · APK (41MB)**
 
-[내려받기](https://github.com/hykkh/h-programs/releases/download/photo-editor-v1.6.2/PhotoEditor-v1.6.2.apk)
+[내려받기](https://github.com/hykkh/h-programs/releases/download/photo-editor-v1.6.3/PhotoEditor-v1.6.3.apk)
 
 ---
 
@@ -112,9 +112,9 @@ _다운로드 링크는 카탈로그 페이지에서 (비공개 배포)_
 
 > 인터넷 없이도 한글(HWP), 워드, 엑셀, PDF 등 다양한 문서를 열어볼 수 있는 오프라인 통합 문서 뷰어입니다. 광고 없이 완전 무료로 제공되며, 메신저나 메일의 첨부파일을 빠르고 쾌적하게 확인할 수 있습니다.
 
-**v0.5.3 · Android · 문서뷰어 / Android 8+ · APK (99MB)**
+**v0.5.4 · Android · 문서뷰어 / Android 8+ · APK (101MB)**
 
-[내려받기](https://github.com/hykkh/h-programs/releases/download/hoffice-v0.5.3/Hoffice-v0.5.3.apk)
+[내려받기](https://github.com/hykkh/h-programs/releases/download/hoffice-v0.5.4/Hoffice-v0.5.4.apk)
 
 ---
 

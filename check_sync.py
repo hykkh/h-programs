@@ -58,6 +58,7 @@ SIZE_BY_LABEL = [
 VERSION_OF = {
     'H-Train': (os.path.join(PROGRAMS, 'HTrain', 'htrain2', 'version.py'),
                 r"VERSION\s*=\s*'([0-9.]+)'"),
+    '면세 비교': (os.path.join(PROGRAMS, 'dutyfree-compare', 'VERSION'), r"([0-9.]+)"),
     'News Alert': (os.path.join(PROGRAMS, 'news-alert', 'package.json'),
                    r'"version"\s*:\s*"([0-9.]+)"'),
     '부동산 레이더': (os.path.join(PROGRAMS, 'realty-radar', 'package.json'),

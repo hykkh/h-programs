@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>개인정보처리방침 — H-Programs</title>
+<style>
+:root{--bg:#fff;--ink:#1d1b20;--sub:#49454f;--line:#e2dde8;--brand:#65558f;--fill:#f6f2fa}
+@media (prefers-color-scheme:dark){:root{--bg:#141218;--ink:#e6e0e9;--sub:#cac4d0;--line:#36343b;--brand:#d0bcff;--fill:#211f26}}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 -apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+main{max-width:760px;margin:0 auto;padding:32px 18px 64px}
+h1{font-size:26px;line-height:1.35;margin:0 0 18px}h2{font-size:20px;margin:36px 0 10px}h3{font-size:17px;margin:28px 0 8px;color:var(--brand)}
+hr{border:0;border-top:1px solid var(--line);margin:28px 0}ul,ol{padding-left:22px}li{margin:4px 0}
+code{background:var(--fill);padding:1px 5px;border-radius:4px;font-size:.92em}
+.table{overflow-x:auto}table{border-collapse:collapse;font-size:14px;min-width:640px}th,td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;text-align:left}th{background:var(--fill)}
+</style></head><body><main>
+<h1>개인정보처리방침 (H-Programs 안드로이드 앱 통합)</h1>
+<p><strong>H-Programs(운영자: 김경호)</strong>는 아래 다섯 개 안드로이드 애플리케이션(이하 통칭하여 &quot;앱&quot;)을 운영하며, 이용자의 개인정보를 중요하게 생각하고 안전하게 보호하기 위해 본 개인정보처리방침을 수립·공개합니다. 본 방침은 웹페이지 한 곳에서 다섯 개 앱의 개인정보 처리 내역을 함께 안내합니다.</p>
+<h3>[적용 대상 앱]</h3>
+<ol>
+<li><strong>Hoffice</strong> (문서 보기: 한글·워드·엑셀·PPT·PDF)</li>
+<li><strong>포토에디터</strong> (사진·동영상 자르기, 블러, 모자이크, 워터마크)</li>
+<li><strong>부동산 레이더</strong> (아파트·원룸 매물과 법원경매 감시 알림)</li>
+<li><strong>뉴스 알림</strong> (관심 키워드 뉴스 알림)</li>
+<li><strong>와인셀러</strong> (와인 보관 목록, 라벨 사진 인식, 시세)</li>
+</ol>
+<hr>
+<h2>1. 운영자 정보 및 기본 원칙</h2>
+<ul>
+<li><strong>운영자(개인정보처리자)</strong>: 김경호 (H-Programs)</li>
+<li><strong>연락처(이메일)</strong>: hskkho@gmail.com</li>
+<li><strong>배포 및 운영 원칙</strong>:</li>
+<ul>
+<li>본 다섯 개 앱은 운영자가 직접 선정하여 초대한 사용자에게만 배포합니다.</li>
+<li>모든 앱에는 <strong>광고가 없으며</strong>, 외부 사용자 행동 <strong>분석 도구(애널리틱스)를 사용하지 않고</strong>, 수집한 정보를 제3자에게 <strong>판매하지 않습니다.</strong></li>
+</ul>
+</ul>
+<hr>
+<h2>2. 다섯 개 앱 공통 사항: 사용 승인(라이선스 확인)</h2>
+<p>다섯 개 앱 모두 최초 실행 시 운영자의 <strong>사용 승인</strong>을 한 번 받아야 사용할 수 있습니다.</p>
+<ul>
+<li><strong>수집하는 항목</strong>:</li>
+<ol>
+<li>사용자가 직접 입력한 <strong>이름</strong></li>
+<li><strong>기기 번호</strong> (휴대전화의 Android ID를 앱 이름과 섞어 SHA-256 방식으로 변환한 16자리 고유값이며, <strong>Android ID 원본은 수집하거나 보내지 않습니다</strong>)</li>
+<li><strong>휴대전화 기종(모델명)</strong></li>
+<li><strong>앱 판 번호(버전)</strong></li>
+<li><strong>접속 IP 주소</strong></li>
+</ol>
+<li><strong>보내는 곳(전송 대상) 및 처리 과정</strong>:</li>
+<ul>
+<li>사용 승인 신청 시 위 정보가 운영자 서버(<code>lic.hyt.kr</code>)로 전송됩니다.</li>
+<li>운영자는 <strong>텔레그램(Telegram)</strong>으로 신청 알림을 받아 승인 또는 거절을 처리합니다.</li>
+<li>승인되면 해당 휴대전화 전용 열쇠(인증 키)를 내려받아 기기 안에 저장하며, 그 뒤로는 인터넷 연결 없이도 앱을 사용할 수 있습니다(자체 서버 통신이 필요한 앱 제외).</li>
+<li>단, 승인 후 <strong>7일마다</strong> 인터넷이 연결되어 있을 때 승인 상태를 다시 확인하기 위해 <strong>기기 번호(16자리 변환값)</strong>와 <strong>앱 판 번호</strong>를 운영자 서버(<code>lic.hyt.kr</code>)로 보냅니다.</li>
+</ul>
+<li><strong>보관 기간</strong>: 운영자가 서버 관리 화면에서 기록을 지울 때까지 보관합니다.</li>
+<li><strong>삭제 방법</strong>: 사용자가 운영자 이메일(<code>hskkho@gmail.com</code>)로 삭제를 요청하면 지체 없이 서버 기록을 완전히 지웁니다.</li>
+</ul>
+<hr>
+<h2>3. 앱별 개인정보 수집·전송·보관·삭제 안내</h2>
+<p>위 2항의 <strong>[공통: 사용 승인]</strong> 외에, 각 앱의 기능에 따라 다루는 정보는 다음과 같습니다.</p>
+<h3>3-1. Hoffice (문서 보기: 한글·워드·엑셀·PPT·PDF)</h3>
+<ul>
+<li><strong>모으고 다루는 것 (수집·처리 항목)</strong>:</li>
+<ul>
+<li>사용자가 &#x27;파일 열기&#x27; 또는 다른 앱의 &#x27;공유&#x27; 기능으로 직접 넘긴 문서 파일</li>
+<li>최근에 연 문서 목록, 즐겨찾기 목록</li>
+</ul>
+<li><strong>보내는 곳 (전송 여부)</strong>:</li>
+<ul>
+<li>모든 문서는 <strong>휴대전화 안에서만 열며, 외부 서버나 제3자 어디로도 보내지 않습니다.</strong></li>
+<li>인터넷 연결은 오직 <strong>[2. 공통: 사용 승인]</strong> 확인에만 씁니다.</li>
+</ul>
+<li><strong>두는 기간 (보관 기간)</strong>:</li>
+<ul>
+<li>최근에 연 문서 목록과 즐겨찾기는 <strong>휴대전화 안에만 저장</strong>되며, 앱을 지우거나 데이터를 초기화할 때까지 기기에만 남습니다.</li>
+</ul>
+<li><strong>지우는 방법 (삭제 방법)</strong>:</li>
+<ul>
+<li>앱 안에서 목록을 직접 지우거나, 휴대전화 설정에서 앱 데이터 삭제 또는 앱을 삭제하면 즉시 지워집니다.</li>
+<li>사용 승인 서버 기록은 운영자(<code>hskkho@gmail.com</code>)에게 연락하면 지웁니다.</li>
+</ul>
+</ul>
+<h3>3-2. 포토에디터 (사진·동영상 자르기, 블러, 모자이크, 워터마크)</h3>
+<ul>
+<li><strong>모으고 다루는 것 (수집·처리 항목)</strong>:</li>
+<ul>
+<li>사용자가 편집을 위해 선택한 사진·동영상 파일 및 사진 속 얼굴 영역 인식 정보</li>
+</ul>
+<li><strong>보내는 곳 (전송 여부)</strong>:</li>
+<ul>
+<li>사진과 동영상은 <strong>휴대전화 안에서만 처리하고 어디로도 보내지 않습니다.</strong></li>
+<li>얼굴 자동 찾기 기능 역시 Google ML Kit을 이용하여 <strong>기기 안(On-device)에서만 처리</strong>하므로 외부로 사진이 전송되지 않습니다.</li>
+<li>편집한 파일을 저장할 때는 위치 정보(GPS)나 촬영 정보 같은 <strong>메타데이터(EXIF 등)를 자동으로 지우고 저장</strong>합니다.</li>
+<li>인터넷 연결은 오직 <strong>[2. 공통: 사용 승인]</strong> 확인에만 씁니다.</li>
+</ul>
+<li><strong>두는 기간 (보관 기간)</strong>:</li>
+<ul>
+<li>외부 서버로 보내거나 보관하는 사진·동영상 기록이 전혀 없습니다. 편집 결과물은 사용자의 휴대전화 저장소에만 남습니다.</li>
+</ul>
+<li><strong>지우는 방법 (삭제 방법)</strong>:</li>
+<ul>
+<li>기기에 저장된 사진·동영상은 사용자가 휴대전화 갤러리(파일 관리 앱)에서 직접 지울 수 있습니다.</li>
+<li>사용 승인 서버 기록은 운영자(<code>hskkho@gmail.com</code>)에게 연락하면 지웁니다.</li>
+</ul>
+</ul>
+<h3>3-3. 부동산 레이더 (아파트·원룸 매물과 법원경매 감시 알림)</h3>
+<ul>
+<li><strong>모으고 다루는 것 (수집·처리 항목)</strong>:</li>
+<ul>
+<li>사용자가 등록한 <strong>관심 지역 및 매물 조건</strong></li>
+<li>앱이 처음 실행될 때 자동으로 만든 <strong>임의의 사용자 번호(난수 ID)</strong></li>
+<li>※ 본 앱은 사용자의 <strong>이름, 전화번호, 위치 정보(GPS)를 모으지 않습니다</strong> (최초 사용 승인 시 공통 항목 제외).</li>
+</ul>
+<li><strong>보내는 곳 (전송 대상)</strong>:</li>
+<ul>
+<li>사용자가 선택한 서버(<strong>운영자 PC 서버</strong>)에 접속하여 관심 지역·조건과 임의의 사용자 번호를 저장합니다.</li>
+<li>새 매물이나 경매 물건을 확인하기 위해 주기적으로 그 서버에 접속하며, 조건에 맞는 새 물건이 있으면 휴대전화에 알림을 띄웁니다.</li>
+</ul>
+<li><strong>두는 기간 (보관 기간)</strong>:</li>
+<ul>
+<li>사용자가 앱에서 관심 조건을 지우거나, 운영자에게 서버 기록 삭제를 요청할 때까지 해당 서버에 보관합니다.</li>
+</ul>
+<li><strong>지우는 방법 (삭제 방법)</strong>:</li>
+<ul>
+<li><strong>관심 조건</strong>: 앱 화면에서 사용자가 언제든지 직접 지울 수 있습니다.</li>
+<li><strong>서버 기록</strong>: 운영자 이메일(<code>hskkho@gmail.com</code>)로 삭제를 요청하면 서버에 저장된 사용자 번호와 기록을 모두 지웁니다.</li>
+</ul>
+</ul>
+<h3>3-4. 뉴스 알림 (관심 키워드 뉴스 알림)</h3>
+<ul>
+<li><strong>모으고 다루는 것 (수집·처리 항목)</strong>:</li>
+<ul>
+<li>사용자가 등록한 <strong>관심 키워드</strong></li>
+<li>사용자가 직접 입력한 <strong>네이버 API 키</strong></li>
+<li>(사용자가 알림 서버 주소를 직접 넣은 경우에만) 알림용 <strong>푸시 토큰(Expo)</strong></li>
+</ul>
+<li><strong>보내는 곳 (전송 대상)</strong>:</li>
+<ul>
+<li><strong>관심 키워드</strong>: 휴대전화 안에만 저장되며, 뉴스를 찾을 때 휴대전화가 직접 <strong>네이버 뉴스 검색 API</strong>(사용자가 넣은 네이버 API 키 사용)와 <strong>구글 뉴스(Google News)</strong>로 키워드를 보냅니다.</li>
+<li><strong>네이버 API 키</strong>: 휴대전화의 <strong>보안 저장소</strong>에 안전하게 저장합니다. 단, 사용자가 원할 경우 &#x27;공유 코드&#x27; 기능을 통해 다른 사람에게 직접 넘길 수 있습니다.</li>
+<li><strong>푸시 토큰(Expo)</strong>: 사용자가 서버 주소를 따로 입력한 경우에만, 해당 서버로 알림용 푸시 토큰을 보내 등록합니다.</li>
+</ul>
+<li><strong>두는 기간 (보관 기간)</strong>:</li>
+<ul>
+<li>키워드와 네이버 API 키는 사용자가 지우거나 앱을 삭제할 때까지 휴대전화 안에만 보관됩니다.</li>
+<li>별도 등록한 서버의 푸시 토큰은 서버 설정을 해제하거나 삭제를 요청할 때까지 보관됩니다.</li>
+</ul>
+<li><strong>지우는 방법 (삭제 방법)</strong>:</li>
+<ul>
+<li>키워드와 네이버 API 키는 앱 안에서 직접 지우거나, 앱 데이터 삭제/앱 삭제를 통해 즉시 지울 수 있습니다.</li>
+<li>등록된 푸시 토큰 및 사용 승인 기록은 앱에서 설정을 지우거나 운영자(<code>hskkho@gmail.com</code>)에게 요청하면 지웁니다.</li>
+</ul>
+</ul>
+<h3 id="winecellar">3-5. 와인셀러 (와인 보관 목록, 라벨 사진 인식, 시세)</h3>
+<ul>
+<li><strong>모으고 다루는 것 (수집·처리 항목 및 권한)</strong>:</li>
+<ul>
+<li><strong>계정 정보</strong>: 이메일 주소, 비밀번호</li>
+<li><strong>와인 보관 정보</strong>: 와인 목록, 보관 위치, 구매가, 메모, 사용자가 저장한 와인 사진</li>
+<li><strong>라벨 인식용 사진</strong>: 와인 라벨 사진</li>
+<li><strong>접근 권한</strong>: <strong>카메라</strong> 및 <strong>사진 보관함(갤러리)</strong> 접근 권한 (와인 라벨 촬영 및 사진 선택 용도로만 사용)</li>
+</ul>
+<li><strong>보내는 곳 (전송 대상)</strong>:</li>
+<ul>
+<li><strong>Supabase (클라우드 데이터베이스 및 인증 서버)</strong>: 이메일과 비밀번호로 계정을 만들고(Supabase 인증), 계정별로 와인 목록·보관 위치·구매가·메모·저장한 와인 사진을 보내 저장합니다.</li>
+<li><strong>Supabase 서버 함수 및 Google Gemini</strong>: 라벨 사진을 찍거나 선택하면, 그 사진을 <strong>Supabase 서버 함수</strong>로 보내 <strong>Google Gemini</strong>로 라벨 글자를 읽고 와인 이름으로 시세를 찾습니다.</li>
+</ul>
+<li><strong>두는 기간 (보관 기간)</strong>:</li>
+<ul>
+<li><strong>라벨 인식용 사진</strong>: 라벨 글자를 읽는 데에만 일시적으로 쓰며, <strong>사용자가 자신의 목록에 직접 저장한 와인의 사진만</strong> 남습니다.</li>
+<li><strong>계정 및 와인 정보</strong>: 사용자가 계정 삭제를 요청할 때까지 Supabase 서버에 보관합니다.</li>
+</ul>
+<li><strong>지우는 방법 (계정 및 데이터 삭제 방법)</strong>:</li>
+<ul>
+<li>개별 와인 정보와 사진은 앱 안에서 언제든지 직접 지울 수 있습니다.</li>
+<li><strong>계정 및 전체 정보 삭제</strong>: <strong>앱의 [설정] 화면에서 계정 삭제를 요청</strong>하거나, 운영자 이메일(<code>hskkho@gmail.com</code>)로 삭제를 요청할 수 있습니다. 요청을 받으면 <strong>계정 정보와 저장한 와인 정보(목록, 사진, 메모 등)를 모두 복구할 수 없도록 완전히 지웁니다.</strong></li>
+</ul>
+</ul>
+<hr>
+<h2>4. 앱별 개인정보 처리 요약표</h2>
+<div class="table"><table><thead><tr><th>앱 이름</th><th>수집·처리하는 정보</th><th>보내는 곳 (전송 대상)</th><th>보관 위치 및 기간</th><th>삭제 방법</th></tr></thead><tbody>
+<tr><td><strong>공통 (5개 앱)</strong></td><td>이름, 기기 번호(SHA-256 16자리), 기종, 앱 판 번호, 접속 IP</td><td>운영자 승인 서버 (<code>lic.hyt.kr</code>), 운영자 알림용 텔레그램</td><td>서버 관리 화면에서 삭제 시까지</td><td>운영자 이메일(<code>hskkho@gmail.com</code>)로 삭제 요청</td></tr>
+<tr><td><strong>1. Hoffice</strong></td><td>열람 문서, 최근 문서 목록, 즐겨찾기</td><td><strong>전송 안 함</strong> (기기 내 처리)</td><td>기기 내부 (앱 삭제 시까지)</td><td>앱 내 목록 삭제 또는 앱 삭제</td></tr>
+<tr><td><strong>2. 포토에디터</strong></td><td>사진·동영상, 얼굴 인식(ML Kit 기기 내 처리) <em>(저장 시 메타데이터 삭제)</em></td><td><strong>전송 안 함</strong> (기기 내 처리)</td><td>기기 내부 (외부 보관 없음)</td><td>기기 갤러리에서 파일 직접 삭제</td></tr>
+<tr><td><strong>3. 부동산 레이더</strong></td><td>관심 지역·조건, 임의 생성 사용자 번호 <em>(이름·전화번호·위치 미수집)</em></td><td>사용자가 선택한 서버 (운영자 PC)</td><td>조건 삭제 또는 서버 기록 삭제 요청 시까지</td><td>관심 조건은 앱에서 직접 삭제, 서버 기록은 운영자에게 요청</td></tr>
+<tr><td><strong>4. 뉴스 알림</strong></td><td>관심 키워드, 네이버 API 키, (서버 입력 시) Expo 푸시 토큰</td><td>네이버 뉴스 API·구글 뉴스(키워드 직접 조회), 사용자 지정 서버(푸시 토큰)</td><td>키워드·API 키는 기기 내부 보관</td><td>앱 내 삭제·앱 삭제, 서버 기록은 운영자에게 요청</td></tr>
+<tr><td><strong>5. 와인셀러</strong></td><td>이메일·비밀번호, 와인 목록·위치·구매가·메모, 와인 라벨 사진</td><td><strong>Supabase</strong>(인증·DB·서버 함수), <strong>Google Gemini</strong>(라벨 인식)</td><td>계정 삭제 요청 시까지 <em>(인식용 사진은 미저장, 저장한 와인 사진만 보관)</em></td><td><strong>앱 내 [설정]에서 계정 삭제 요청</strong> 또는 운영자 이메일로 요청</td></tr>
+</tbody></table></div>
+<hr>
+<h2>5. 만 14세 미만 아동의 개인정보 보호</h2>
+<p>본 다섯 개 앱은 <strong>만 14세 미만을 대상으로 하지 않으며</strong>, 만 14세 미만 아동의 개인정보를 고의로 수집하지 않습니다. 만약 만 14세 미만 아동의 정보가 수집된 사실을 알게 될 경우 즉시 해당 정보를 삭제합니다.</p>
+<hr>
+<h2 id="delete">6. 개인정보 관련 문의 및 삭제 요청 창구</h2>
+<p>앱을 사용하면서 개인정보와 관련하여 궁금한 점이 있거나, <strong>사용 승인 기록·서버 기록·와인셀러 계정 등의 삭제</strong>를 원하시는 경우 아래 연락처로 문의해 주시면 신속하게 처리해 드립니다.</p>
+<ul>
+<li><strong>운영자</strong>: 김경호 (H-Programs)</li>
+<li><strong>이메일</strong>: hskkho@gmail.com</li>
+</ul>
+<hr>
+<h2>7. 개인정보처리방침의 변경 및 시행일</h2>
+<p>본 개인정보처리방침의 내용이 바뀌면, 이 웹페이지에 바뀐 날짜와 함께 고쳐서 안내합니다.</p>
+<ul>
+<li><strong>시행일</strong>: 2026년 11월 5일</li>
+</ul>
+</main></body></html>

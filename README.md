@@ -122,9 +122,9 @@ _다운로드 링크는 카탈로그 페이지에서 (비공개 배포)_
 
 > 인터넷 없이도 한글(HWP), 워드, 엑셀, PDF 등 다양한 문서를 열어볼 수 있는 오프라인 통합 문서 뷰어입니다. 광고 없이 완전 무료로 제공되며, 메신저나 메일의 첨부파일을 빠르고 쾌적하게 확인할 수 있습니다.
 
-**v0.5.5 · Android · 문서뷰어 / Android 8+ · APK (108MB)**
+**v0.5.6 · Android · 문서뷰어 / Android 8+ · APK (108MB)**
 
-[내려받기](https://github.com/hykkh/h-programs/releases/download/hoffice-v0.5.5/Hoffice-v0.5.5.apk)
+[내려받기](https://github.com/hykkh/h-programs/releases/download/hoffice-v0.5.6/Hoffice-v0.5.6.apk)
 
 ---
 
